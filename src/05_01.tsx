@@ -9,6 +9,11 @@ const people: Array<ManType> = [
     {name: 'Mark Greg', age: 15},
 ]
 
+const ArtyomTransformator = (man: ManType) => ({
+    stack: ['css', 'html', 'js', 'tdd', 'react'],
+    firstName: man.name.split('')[0],
+    lastName: man.name.split('')[1]
+})
 
 
 const devs = [
@@ -26,8 +31,16 @@ const devs = [
     },
 ]
 
-const dev2 = [
+
+const devs2 = [
     ArtyomTransformator(people[0]),
     ArtyomTransformator(people[1]),
-    ArtyomTransformator(people[2])
+    ArtyomTransformator(people[2]),
 ]
+
+const devs3 = people.map(ArtyomTransformator)
+const devs4 = people.map(man => ({
+    stack: ['css', 'html', 'js', 'tdd', 'react'],
+    firstName: man.name.split('')[0],
+    lastName: man.name.split('')[1]
+}))
